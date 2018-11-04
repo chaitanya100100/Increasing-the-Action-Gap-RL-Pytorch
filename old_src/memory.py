@@ -29,9 +29,9 @@ class MemoryReplay(object):
 		#self.ss[self._cursor] = sras[3]
 		self.done[self._cursor] = sras[3]
 
-        self._cursor += 1
-        if self._cursor == self.max_size:
-            self._cursor = 0
+		self._cursor += 1
+		if self._cursor == self.max_size:
+			self._cursor = 0
 
 
 	def batch(self):
