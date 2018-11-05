@@ -63,4 +63,4 @@ if __name__ == '__main__':
 
 
     #print(task.max_timesteps)
-    main(env, 2000000)
+    main(env, 40000000)
