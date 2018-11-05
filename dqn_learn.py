@@ -37,7 +37,8 @@ OptimizerSpec = namedtuple("OptimizerSpec", ["constructor", "kwargs"])
 
 Statistic = {
     "mean_episode_rewards": [],
-    "best_mean_episode_rewards": []
+    "best_mean_episode_rewards": [],
+    "mean_action_gap" : []
 }
 
 def dqn_learing(
@@ -203,7 +204,11 @@ def dqn_learing(
 
             # Compute current Q value, q_func takes only state and output value for every state-action pair
             # We choose Q based on action taken.
-            current_Q_values = Q(obs_batch).gather(1, act_batch.unsqueeze(1)).squeeze()
+            cur_all_Q_values = Q(obs_batch)
+            action_gap = cur_all_Q_values.max(dim=1)[0] * cur_all_Q_values.size(1) - cur_all_Q_values.sum(dim=1)
+            Statistic["mean_action_gap"].append(action_gap.mean().item())
+
+            current_Q_values = cur_all_Q_values.gather(1, act_batch.unsqueeze(1)).squeeze()
             # Compute next Q value based on which action gives max Q values
             # Detach variable from the current graph since we don't want gradients for next Q to propagated
             next_target_Q_values = target_Q(next_obs_batch).detach()
@@ -215,15 +220,17 @@ def dqn_learing(
             bellman_error = target_Q_values - current_Q_values
 
             cur_target_Q_values = target_Q(obs_batch).detach()
-            #print(cur_target_Q_values.size())
-            #print(cur_target_Q_values.max(dim=1)[0].size())
 
-            al_error = cur_target_Q_values.max(dim=1)[0] - cur_target_Q_values.gather(1, act_batch.unsqueeze(1)).squeeze()
+            cur_advantage = cur_target_Q_values.max(dim=1)[0] - cur_target_Q_values.gather(1, act_batch.unsqueeze(1)).squeeze()
+            next_advantage = next_target_Q_values.max(dim=1)[0] - next_target_Q_values.gather(1, act_batch.unsqueeze(1)).squeeze()
 
-            bellman_error = bellman_error - AL_ALPHA * al_error
+            al_error = bellman_error - AL_ALPHA * cur_advantage
+            persistent_error = bellman_error - AL_ALPHA * next_advantage
+            pal_error = torch.max(al_error, persistent_error)
+            error = pal_error # use whichever you want
 
             # clip the bellman error between [-1 , 1]
-            clipped_bellman_error = bellman_error.clamp(-1, 1)
+            clipped_bellman_error = error.clamp(-1, 1)
             # Note: clipped_bellman_delta * -1 will be right gradient
             d_error = clipped_bellman_error * -1.0
             # Clear previous gradients before backward pass
