@@ -48,14 +48,19 @@ def main(env, num_timesteps):
 
 if __name__ == '__main__':
     # Get Atari games.
+
     benchmark = gym.benchmark_spec('Atari40M')
 
     # Change the index to select a different game.
-    task = benchmark.tasks[3]
+    #task = benchmark.tasks[3]
+    #task = 'AsterixNoFrameskip-v4'
+    task = 'PrivateEyeNoFrameskip-v4'
 
     # Run training
     seed = 0 # Use a seed of zero (you may want to randomize the seed!)
     env = get_env(task, seed)
 
-    print(task.max_timesteps)
-    main(env, task.max_timesteps)
+
+
+    #print(task.max_timesteps)
+    main(env, 2000000)
