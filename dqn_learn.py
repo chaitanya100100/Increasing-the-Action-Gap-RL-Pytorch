@@ -146,7 +146,7 @@ def dqn_learing(
     save_best_mean_reward = -float('inf')
     last_obs = env.reset()
     LOG_EVERY_N_STEPS = 10000
-    SAVE_EVERY_N_STEPS = 1000000
+    SAVE_EVERY_N_STEPS = 2000000
 
     for t in count():
         ### Check stopping criterion
