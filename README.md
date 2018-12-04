@@ -21,6 +21,13 @@ Pytorch implementation of the Persistent Advantage learning operator proposed in
 - `selected_results_video` directory,
   - It contains the videos for 5 Atari games on which I have trained Persistent Advantage Learning (PAL) operator. First video is taken at the start of the training and second video is taken after training.
 
+## Results and Report
+- `report.pdf` has indepth analysis of the paper and obtained results. It includes the results obtained by authors which aligns with my results.
+- `presentation.pdf` was used to present the project and results.
+
+## TODO
+- Source code has some code duplication which can be removed and restructured.
+
 ## Credit
 
 This implementation is inspired from <https://github.com/berkeleydeeprlcourse/homework/tree/master/hw3>
