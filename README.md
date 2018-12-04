@@ -2,6 +2,10 @@
 
 Pytorch implementation of the Persistent Advantage learning operator proposed in [Increasing the Action Gap: New Operators for Reinforcement Learning](https://arxiv.org/abs/1512.04860) . This repository includes the source code for training, demo and action gap visualization, and trained models for 5 Atari games.
 
+## Results
+
+![Phoenix](./results/gifs/Phoenix.gif)![Pong](./results/gifs/Pong.gif)![Breakout](./results/gifs/Breakout.gif)![SpaceInvaders](./results/gifs/SpaceInvaders.gif)![Asterix](./results/gifs/Asterix.gif)
+
 ## Requirements
 
 - python 3.5
@@ -18,16 +22,25 @@ Pytorch implementation of the Persistent Advantage learning operator proposed in
   - `main_traj.py` can be used to run one test episode with trained model. It will also store the observed states which can later be used to plot action gap. Set the environment name (game name) in `main_traj.py`  and run it. Make sure that you have trained model with appropriate name in `models` directory.
   - `main_actiongap.py` can be used to run normal DQN, AL and PAL for an episode to store the action gap which can be visualized later. First run `main_traj.py` with appropriate game name to store an episode. Then run `main_actiongap.py` with the same game name. It will store the actiongap for all 3 operators in a pickle file.
   - `actiongap_plot.py` can be used to plot saved actiongap. 
-- `selected_results_video` directory,
-  - It contains the videos for 5 Atari games on which I have trained Persistent Advantage Learning (PAL) operator. First video is taken at the start of the training and second video is taken after training.
+- `results` directory,
+  - `videos` contains the videos for 5 Atari games on which I have trained Persistent Advantage Learning (PAL) operator. First video is taken at the start of the training and second video is taken after training.
+  - `plots` includes the plotted results by my training and authors' results.
 
-## Results and Report
+
+
+## Report
+
 - `report.pdf` has indepth analysis of the paper and obtained results. It includes the results obtained by authors which aligns with my results.
 - `presentation.pdf` was used to present the project and results.
 
-## TODO
-- Source code has some code duplication which can be removed and restructured.
+
 
 ## Credit
 
 This implementation is inspired from <https://github.com/berkeleydeeprlcourse/homework/tree/master/hw3>
+
+
+
+### TODO
+
+- Source code has some code duplication which can be removed and restructured.
