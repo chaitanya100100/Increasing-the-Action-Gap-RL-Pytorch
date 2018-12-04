@@ -1,4 +1,4 @@
-# Increasing the Action Gap
+# Increasing the Action Gap : New Operators for Reinforcement Learning
 
 Pytorch implementation of the Persistent Advantage learning operator proposed in [Increasing the Action Gap: New Operators for Reinforcement Learning](https://arxiv.org/abs/1512.04860) . This repository includes the source code for training, demo and action gap visualization, and trained models for 5 Atari games.
 
