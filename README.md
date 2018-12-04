@@ -13,8 +13,8 @@ Pytorch implementation of new reinfrocement learning operators proposed in [Incr
 ## Requirements
 
 - python 3.5
-- [gym](https://github.com/openai/gym#installation) 
-- [pytorch](https://github.com/pytorch/pytorch#from-source)
+- [gym](https://gym.openai.com/) 
+- [pytorch](https://pytorch.org/)
 
 ## Implementation Details
 
