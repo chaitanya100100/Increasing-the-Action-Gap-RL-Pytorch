@@ -25,7 +25,7 @@ Pytorch implementation of new reinfrocement learning operators proposed in [Incr
   - `main_actiongap.py` can be used to run normal DQN, AL and PAL for an episode to store the action gap which can be visualized later. First run `main_traj.py` with appropriate game name to store an episode. Then run `main_actiongap.py` with the same game name. It will store the actiongap for all 3 operators in a pickle file.
   - `actiongap_plot.py` can be used to plot saved actiongap. 
 - `results` directory,
-  - `videos` contains the videos for 5 Atari games on which I have trained Persistent Advantage Learning (PAL) operator. First video is taken at the start of the training and second video is taken after training.
+  - `videos` contains the videos for 5 Atari games on which we have trained Persistent Advantage Learning (PAL) operator. First video is taken at the start of the training and second video is taken after training.
   - `plots` includes the plotted results by my training and authors' results.
 
 
