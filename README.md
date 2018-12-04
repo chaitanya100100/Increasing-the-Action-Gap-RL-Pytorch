@@ -1,12 +1,14 @@
 # Increasing the Action Gap : New Operators for Reinforcement Learning
 
-Pytorch implementation of new reinfrocement learning operators proposed in [Increasing the Action Gap: New Operators for Reinforcement Learning](https://arxiv.org/abs/1512.04860) . This repository includes the source code for training, demo and action gap visualization, and trained models with 3 learning operators for 5 Atari games.
+Pytorch implementation of new reinfrocement learning operators proposed in [Increasing the Action Gap: New Operators for Reinforcement Learning](https://arxiv.org/abs/1512.04860) . This repository includes the source code for training, demo and action gap visualization with 3 learning operators for 5 Atari games.
 
 ## Results
 
 - Persistent Advantage Learning operator on 5 games : Phoenix, Pong, Breakout, SpaceInvaders and Asterix
 
 ![Phoenix](./results/gifs/Phoenix.gif)![Pong](./results/gifs/Pong.gif)![Breakout](./results/gifs/Breakout.gif)![SpaceInvaders](./results/gifs/SpaceInvaders.gif)![Asterix](./results/gifs/Asterix.gif)
+
+- Saved model can be downloaded from ![here](https://drive.google.com/drive/folders/1B-IR61doSWo1vyKHL4bTQjrpqsBok2c4?usp=sharing)
 
 ## Requirements
 
