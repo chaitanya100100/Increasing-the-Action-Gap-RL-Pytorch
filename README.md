@@ -8,7 +8,7 @@ Pytorch implementation of new reinfrocement learning operators proposed in [Incr
 
 ![Phoenix](./results/gifs/Phoenix.gif)![Pong](./results/gifs/Pong.gif)![Breakout](./results/gifs/Breakout.gif)![SpaceInvaders](./results/gifs/SpaceInvaders.gif)![Asterix](./results/gifs/Asterix.gif)
 
-- Saved model can be downloaded from ![here](https://drive.google.com/drive/folders/1B-IR61doSWo1vyKHL4bTQjrpqsBok2c4?usp=sharing)
+- Saved model can be downloaded from [here](https://drive.google.com/drive/folders/1B-IR61doSWo1vyKHL4bTQjrpqsBok2c4?usp=sharing)
 
 ## Requirements
 
